@@ -1,0 +1,3 @@
+[submodule "m-lab.pipeline"]
+	path = m-lab.pipeline
+	url = https://code.google.com/p/m-lab.pipeline/
