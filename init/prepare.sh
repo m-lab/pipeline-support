@@ -17,15 +17,16 @@ if test -d $BUILD_DIR ; then
 fi
 
 GO_VERSION=go1.0.3.linux-386.tar.gz
-
-[ -f $GO_VERSION ] || curl -O https://go.googlecode.com/files/$GO_VERSION
-[ -d go ] || tar xzf $GO_VERSION
-
 export GOROOT=$SOURCE_DIR/go
 export GOPATH=$SOURCE_DIR/m-lab.pipeline/standalone
-PATH=$SOURCE_DIR/go/bin:$PATH
-go get github.com/gorilla/mux
-go build pipeline
+export PATH=$SOURCE_DIR/go/bin:$PATH
+
+pushd $SOURCE_DIR
+    [ -f $GO_VERSION ] || curl -O https://go.googlecode.com/files/$GO_VERSION
+    [ -d go ] || tar xzf $GO_VERSION
+    go get github.com/gorilla/mux
+    go build pipeline
+popd
 
 install -D -m 0755 $SOURCE_DIR/pipeline $BUILD_DIR/pipeline
 install -D -m 0755 $SOURCE_DIR/m-lab.pipeline/standalone/start.sh $BUILD_DIR/init/start.sh
