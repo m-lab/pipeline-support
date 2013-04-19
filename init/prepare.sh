@@ -29,5 +29,5 @@ pushd $SOURCE_DIR
 popd
 
 install -D -m 0755 $SOURCE_DIR/pipeline $BUILD_DIR/pipeline
-install -D -m 0755 $SOURCE_DIR/m-lab.pipeline/standalone/start.sh $BUILD_DIR/init/start.sh
+install -D -m 0755 $SOURCE_DIR/init/start.sh $BUILD_DIR/init/start.sh
 install -D -m 0755 $SOURCE_DIR/m-lab.pipeline/standalone/stop.sh $BUILD_DIR/init/stop.sh
