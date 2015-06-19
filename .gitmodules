@@ -1,6 +1,6 @@
 [submodule "m-lab.pipeline"]
 	path = m-lab.pipeline
-	url = https://code.google.com/p/m-lab.pipeline/
+	url = https://github.com/m-lab/pipeline
 [submodule "package"]
 	path = package
 	url = https://github.com/m-lab/package.git
